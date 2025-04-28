@@ -148,7 +148,7 @@
 - C) `gcloud functions deploy http_hello_world --runtime python310 --trigger-http`  
 - D) `gcloud run deploy --trigger-http http_hello_world`  
 
-**Solución**: 
+**Solución: C**
 
 ## **17. ¿Qué hace este bloque en un workflow de GitHub Actions?**
 ```yaml
@@ -172,7 +172,7 @@ on:
 - D) `--function-name`  
 
 
-**Solución**: A D??
+**Solución**: B, c
 
 
 ## **19. ¿Qué comandos de Terraform  de los listados a continuación se usaron durante la práctica para crear y destruir el clúster GKE?**
