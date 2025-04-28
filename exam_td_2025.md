@@ -11,7 +11,7 @@
 - C) La facturación se realiza a nivel de proyecto
 - D) La activación de API's en Google Cloud se realiza por cada proyecto
 
-**Solución:** 
+**Solución: C D**
 
 
 ## **2. Virtual Private Clouds (VPC)**
@@ -21,15 +21,15 @@
 - C) Es posible aplicar reglas de firewall entre diferentes VPCs pero no entre VMs dentro de la misma VPC
 - D) El servicio de VPC Peering permite que dos VPCs intercambien tráfico entre ellas
 
-**Solución:**
+**Solución: D**
 
-## **3. En Google Cloud,**
+## **3. En Google Cloud **
 - A) Es posible utilizar Custom Images para incluir SW ya instalado y configurado
 - B) Los Snapshots se utilizan normalmente para generar backups de los discos persistentes
 - C) Las Instance Templates también se pueden utilizar como backup de los discos persistentes
 - D) Una Machine Image incluye los datos del "Boot Disk" pero no del resto de discos de la instancia
 
-**Solución:**
+**Solución: A B** 
 
 
 ## **4. Dentro de las **Solución**es de ML/AI de Google Cloud,**
@@ -38,7 +38,7 @@
 - C) Vertex AI proporciona un entorno unificado que cubre el ciclo de vida ML completo (preparacin de datos, training, despliegue y monitorización)
 - D) Vertex AI cubre AI predictiva pero no AI generativa
 
-**Solución:**
+**Solución: B C **
 
 ## **5. En Google Cloud Vertex AI AutoML,**
 - A) AutoML soporta imágenes, texto y vídeo pero no soporta datos tabulares
@@ -46,7 +46,7 @@
 - C) AutoML automáticamente busca los mejores modelos y ajusta los hiperparámetros
 - D) AutoML utiliza transfer learning
 
-**Solución:**
+**Solución: B C D**
 
 ## **6. Contenedores**
 - A) La imagen Docker de un contenedor contiene tanto la aplicación como el kernel del sistema operativo
@@ -54,7 +54,7 @@
 - C) Un contenedor esta formado por capas. Las capas que provienen de la imagen son de solo lectura y sobre ellas se añade una capa que permite tambien escritura.
 - D) Un Dockerfile es un fichero de texto que contiene instrucciones para indicar a Docker como construir una imagen
 
-**Solución:**
+**Solución: B C?? D**
 
 ## **7. Arquitectura Kubernetes**
 - A) El kube-proxy es el elemento responsable de asignar Pods a los Nodos
@@ -78,7 +78,7 @@
 - C) Cuando un contenedor dentro de un Pod finaliza su ejecución, Kubernetes lo reinicia automáticamente
 - D) La propiedad resources.requests.cpu de un contendor dentro de un Pod indica la maxima cantidad de CPU que el contenedor puede utilizar
 
-**Solución:**
+**Solución: B C**
 
 ## **10. Volúmenes**
 - A) Si un Pod es re-asignado a un nodo diferente, los datos guardados en un volumen de tipo emptyDir siguen estando accesibles
@@ -104,7 +104,7 @@
 - D) `terraform apply --dry-run`  
 
 
-**Solución**: 
+**Solución**: C
 
 ## **13. ¿Cuál de los siguientes comandos añade un origen remoto en Git?**
 - A) `git fetch origin`  
@@ -113,7 +113,7 @@
 - D) `git track origin`  
 
 
-**Solución**: 
+**Solución**:  C
 
 ## **14. ¿Qué hace exactamente este fragmento de código en GitHub Actions?**
 ```yaml
@@ -140,14 +140,13 @@
 - D) `Ninguno de los anteriores`
 
 
-**Solución**: 
+**Solución**:  C
 
 ## **16. ¿Qué comando se ejecutó en la práctica hecha en clase sobre FaaS para desplegar manualmente una función en Google Cloud Functions que se ejecutaba al acceder a una url http?**
 - A) `gcloud functions deploy http_hello_world --trigger-event=upload`  
 - B) `gcloud deploy function http_hello_world`  
 - C) `gcloud functions deploy http_hello_world --runtime python310 --trigger-http`  
 - D) `gcloud run deploy --trigger-http http_hello_world`  
-
 
 **Solución**: 
 
@@ -164,7 +163,7 @@ on:
 - D) Ejecuta el workflow al hacer merge en `main`  
 
 
-**Solución**:
+**Solución**: C
 
 ## **18. En la práctica con Cloud Run, ¿qué parámetros eran imprescindibles al usar `gcloud run deploy`?**
 - A) `--project`  
@@ -173,7 +172,7 @@ on:
 - D) `--function-name`  
 
 
-**Solución**:
+**Solución**: A D??
 
 
 ## **19. ¿Qué comandos de Terraform  de los listados a continuación se usaron durante la práctica para crear y destruir el clúster GKE?**
@@ -183,7 +182,7 @@ on:
 - D) `terraform clean`  
 
 
-**Solución**:
+**Solución**: A C
 
 
 
@@ -193,5 +192,5 @@ on:
 - C) `git reset --hard`
 - D) `git stash pop`  
 
-**Solución**:
+**Solución**: B
 
