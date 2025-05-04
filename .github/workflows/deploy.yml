@@ -50,3 +50,7 @@ jobs:
       run: |
         kubectl apply -f k8s/deployment.generated.yaml
         kubectl apply -f k8s/service.yaml
+    
+    - name: Deploy to App Engine
+      run: |
+        gcloud app deploy app.generated.yaml --quiet
