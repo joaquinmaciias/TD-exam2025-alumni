@@ -11,8 +11,7 @@
 - C) La facturación se realiza a nivel de proyecto
 - D) La activación de API's en Google Cloud se realiza por cada proyecto
 
-**Solución: C D**
-
+**Solución: C D** 
 
 ## **2. Virtual Private Clouds (VPC)**
 
@@ -29,8 +28,7 @@
 - C) Las Instance Templates también se pueden utilizar como backup de los discos persistentes
 - D) Una Machine Image incluye los datos del "Boot Disk" pero no del resto de discos de la instancia
 
-**Solución: A B** 
-
+**Solución: A B**
 
 ## **4. Dentro de las **Solución**es de ML/AI de Google Cloud,**
 - A) El "Vision API" es parte del conjunto de APIs de AI generativa que ofrece Google
@@ -38,7 +36,7 @@
 - C) Vertex AI proporciona un entorno unificado que cubre el ciclo de vida ML completo (preparacin de datos, training, despliegue y monitorización)
 - D) Vertex AI cubre AI predictiva pero no AI generativa
 
-**Solución: B C **
+**Solución: B C**
 
 ## **5. En Google Cloud Vertex AI AutoML,**
 - A) AutoML soporta imágenes, texto y vídeo pero no soporta datos tabulares
@@ -54,7 +52,7 @@
 - C) Un contenedor esta formado por capas. Las capas que provienen de la imagen son de solo lectura y sobre ellas se añade una capa que permite tambien escritura.
 - D) Un Dockerfile es un fichero de texto que contiene instrucciones para indicar a Docker como construir una imagen
 
-**Solución: B C?? D**
+**Solución: C D**
 
 ## **7. Arquitectura Kubernetes**
 - A) El kube-proxy es el elemento responsable de asignar Pods a los Nodos
@@ -62,7 +60,7 @@
 - C) Los controladores se ejecutan en los worker nodes
 - D) El componente etcd contiene la especificación de los Pods y sus estados, pero no la configuración de los servicios expresada en los objetos ConfigMaps
 
-**Solución:**
+**Solución: B**
 
 ## **8. Kubernetes networking**
 - A) Kubernetes no define la solución de networking para los pods sino que la delega en plugins accesibles a traves del CNI
@@ -70,7 +68,7 @@
 - C) El recurso Service de tipo LoadBalancer me permite realizar enrutamiento en base a URL
 - D) En kubernetes la comunicación entre Pods que residen en diferentes nodos se realiza a traves de NATs ya que los Pods adquieren direcciones privadas
 
-**Solución:**
+**Solución: A**
 
 ## **9. Pods**
 - A) Por defecto, todos los contenedores de un Pod comparten la misma dirección IP
@@ -78,7 +76,7 @@
 - C) Cuando un contenedor dentro de un Pod finaliza su ejecución, Kubernetes lo reinicia automáticamente
 - D) La propiedad resources.requests.cpu de un contendor dentro de un Pod indica la maxima cantidad de CPU que el contenedor puede utilizar
 
-**Solución: B C**
+**Solución: A C**
 
 ## **10. Volúmenes**
 - A) Si un Pod es re-asignado a un nodo diferente, los datos guardados en un volumen de tipo emptyDir siguen estando accesibles
@@ -86,7 +84,7 @@
 - C) En GKE, se considera una buena práctica definir el disco persistente de Google Cloud en la sección "volumes" de la especificación del Pod
 - D) Para realizar provisión automática de volúmenes en Kubernetes basta con crear dos recursos adicionales: PersistentVolume y PersistentVolumeClaim y configurarlos adecuadamente
 
-**Solución:** 
+**Solución: B C** 
 
 ## **11. Deployments and StatefulSets**
 - A) Si el nodo donde reside un Pod que forma parte de un Deployment falla, Kubernetes creará un nuevo Pod en un nuevo nodo y dará al nuevo Pod la misma identidad de red que tenia en el nodo que falló
@@ -94,8 +92,7 @@
 - C) Para desplegar microservicios que implementan servidores de base de datos, la aproximación recomendada es utilizar StatefulSet
 - D) El recurso Deployment es ideal para microservicios que requieren almacenamiento persistente
 
-**Solución:** 
-
+**Solución: C** 
 
 ## **12. ¿Qué comandos de Terraform usarías para inicializar un proyecto y validar la sintaxis de los ficheros?**
 - A) `terraform init` 
@@ -103,8 +100,7 @@
 - C) `terraform validate`
 - D) `terraform apply --dry-run`  
 
-
-**Solución**: C
+**Solución: A C** 
 
 ## **13. ¿Cuál de los siguientes comandos añade un origen remoto en Git?**
 - A) `git fetch origin`  
@@ -112,8 +108,7 @@
 - C) `git remote add origin <URL>` 
 - D) `git track origin`  
 
-
-**Solución**:  C
+**Solución: C**
 
 ## **14. ¿Qué hace exactamente este fragmento de código en GitHub Actions?**
 ```yaml
@@ -130,7 +125,7 @@
 - D) Lanza un servicio en Cloud Run en la región indicada
 
 
-**Solución**: 
+**Solución: B D**
 
 
 ## **15. ¿Qué comandos de GitHub Actions podrías usar para acceder a los secretos definidos en el repositorio?**
@@ -139,8 +134,7 @@
 - C) `echo ${{ secret.SECRET_API_KEY }}`  
 - D) `Ninguno de los anteriores`
 
-
-**Solución**:  C
+**Solución: B** 
 
 ## **16. ¿Qué comando se ejecutó en la práctica hecha en clase sobre FaaS para desplegar manualmente una función en Google Cloud Functions que se ejecutaba al acceder a una url http?**
 - A) `gcloud functions deploy http_hello_world --trigger-event=upload`  
@@ -162,8 +156,7 @@ on:
 - C) Ejecuta el workflow cuando se hace push a la rama `main`
 - D) Ejecuta el workflow al hacer merge en `main`  
 
-
-**Solución**: C
+**Solución: C**
 
 ## **18. En la práctica con Cloud Run, ¿qué parámetros eran imprescindibles al usar `gcloud run deploy`?**
 - A) `--project`  
@@ -171,9 +164,7 @@ on:
 - C) `--platform`
 - D) `--function-name`  
 
-
-**Solución**: B, c
-
+**Solución: B C**
 
 ## **19. ¿Qué comandos de Terraform  de los listados a continuación se usaron durante la práctica para crear y destruir el clúster GKE?**
 - A) `terraform apply`
@@ -181,10 +172,7 @@ on:
 - C) `terraform destroy`
 - D) `terraform clean`  
 
-
-**Solución**: A C
-
-
+**Solución: A C**
 
 ## **20. ¿Qué comandos de Git ayudan a limpiar el directorio de trabajo local sin perder commits?**
 - A) `git commit`  
@@ -192,5 +180,4 @@ on:
 - C) `git reset --hard`
 - D) `git stash pop`  
 
-**Solución**: B
-
+**Solución: B**

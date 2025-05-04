@@ -7,20 +7,26 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-  
+  GKE_CLUSTER: ${{ secrets.GKE_CLUSTER }}
+  GKE_ZONE: ${{ secrets.GKE_ZONE }}
+  BUCKET_NAME: ${{ secrets.GCP_BUCKET_NAME }}
+  IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT_ID }}/exam2025
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+
     - name: Authenticate with Google Cloud
       uses: google-github-actions/auth@v2
       with:
         credentials_json: ${{ secrets.GCP_SA_KEY }}
-    - uses: "google-github-actions/setup-gcloud@v2"
+
+    - uses: google-github-actions/setup-gcloud@v2
       with:
-        install_components: "gke-gcloud-auth-plugin"
+        install_components: gke-gcloud-auth-plugin
 
     - name: Configure Docker
       run: gcloud auth configure-docker gcr.io
@@ -28,15 +34,19 @@ jobs:
     - name: Build and push Docker image
       run: |
         docker build -t $IMAGE_NAME:$GITHUB_SHA .
-        docker build -t $IMAGE_NAME:lateest .
+        docker build -t $IMAGE_NAME:latest .
         docker push $IMAGE_NAME:$GITHUB_SHA
-        docker push $IMAGE_NAME:lateest
+        docker push $IMAGE_NAME:latest
+
     - name: Replace bucket name in manifest
       run: |
-        sed "s/REPLACE_BUCKET_NAME/${{ secrets.GCP_BUCKET_NAME }}/g" k8s/deployment.yaml > k8s/deployment.generated.yaml
-    - name: Deploy to GKE
+        sed "s/REPLACE_BUCKET_NAME/$BUCKET_NAME/g" k8s/deployment.yaml > k8s/deployment.generated.yaml
+
+    - name: Connect to GKE
       run: |
         gcloud container clusters get-credentials $GKE_CLUSTER --zone $GKE_ZONE
-    - name: Deploy to App Engine
+
+    - name: Deploy to GKE
       run: |
-        sed "s/REPLACE_BUCKET_NAME/${{ secrets.GCP_BUCKET_NAME }}/g" app.yaml > app.generated.yaml
+        kubectl apply -f k8s/deployment.generated.yaml
+        kubectl apply -f k8s/service.yaml

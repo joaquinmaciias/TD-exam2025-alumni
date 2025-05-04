@@ -3,7 +3,11 @@ service: exam2025
 instance_class: F1
 entrypoint: gunicorn -b :$PORT main:apps
 env_variables:
-  GCP_BUCKET_NAME: "REPLACE_BUCKET_NAME" 
+  GCP_BUCKET_NAME: "joaquinmirmacias-bucket"
+  GCP_PROJECT_ID: "future-synapse-458014-v4"
+  GCP_SA_KEY: "12345"
+  GPA_CLUSTER_NAME: "joaquinmirmacias-cluster"
+  GPA_REGION: "us-central1"
 handlers:
 - url: /.*
   script: auto

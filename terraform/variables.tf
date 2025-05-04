@@ -1,14 +1,15 @@
 
 variable "gcp-project" {
   description = "GCP project"
-  default     = ""
+  type        = string
+  default     = "future-synapse-458014-v4"
 }
 
 variable "gcp-network" {
   description = "GCP network"
-  default     = ""
+  type        = string
+  default     = "default"
 }
-
 variable "gcp-region" {
   description = "GCP region"
   type        = string
@@ -17,26 +18,31 @@ variable "gcp-region" {
 variable "gcp-zone" {
   description = "GCP zone"
   type        = string
-  default     = "us-central1-c"
+  default     = "us-central1-a"
 }
 variable "gcp-cluster-name" {
   description = "Cluster name"
   type        = string
-  default     = ""
+  default     = "joaquinmirmacias-cluster"
 }
 
 variable "gcp-node-count" {
   description = "K8s Worker nodes"
-  type        = 
-  default     = 
+  type        = number
+  default     = 1
 }
 variable "gcp-node-size" {
   description = "K8s Worker nodes"
+  type        = number
+  default     = 10
+}
+variable "gcp-machine-type" {
+  description = "Machine Type"
   type        = string
-  default     = ""
+  default     = "e2-medium"
 }
 variable "gcp-bucket-name" {
   description = "Bucket Name"
   type        = string
-  default     = ""
+  default     = "joaquinmirmacias-bucket"
 }
